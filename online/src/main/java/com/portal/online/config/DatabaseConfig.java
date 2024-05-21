@@ -1,5 +1,8 @@
 package com.portal.online.config;
 
+import javax.sql.DataSource;
+
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -8,9 +11,6 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import jakarta.persistence.EntityManagerFactory;
-
-import javax.sql.DataSource;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 
 @Configuration
 @EnableJpaRepositories(basePackages = "com.portal.online.repository")
@@ -21,7 +21,7 @@ public class DatabaseConfig {
         return DataSourceBuilder.create()
             .driverClassName("org.postgresql.Driver")
             .url("jdbc:postgresql://localhost:5432/portal")
-            .username("Drew")
+            .username("drew")
             .password("Erskine")
             .build();
     }
